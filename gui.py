@@ -3,7 +3,7 @@ from tkinter import (filedialog, messagebox, simpledialog)
 import subprocess
 
 root = tk.Tk()
-root.geometry("400x500+110+340")
+root.geometry("+250+340")
 root.iconbitmap("python_18894.ico")
 
 # FUNCTIONS
@@ -63,6 +63,22 @@ menu.add_cascade(label="About", menu=about_menu)
 help_menu = tk.Menu(menu, tearoff=False)
 help_menu.add_command(label="Help", command=help)
 menu.add_cascade(label="Help", menu=help_menu)
+
+
+# RUN
+
+# TEXT AREA CODE
+text_frame = tk.Frame(root)
+text_frame.pack(side = tk.LEFT, fill=tk.BOTH, expand=True)
+code_text = tk.Text(text_frame)
+code_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+
+# TEXT AREA TERMINAL
+terminal_frame = tk.Frame(root)
+terminal_frame.pack(side = tk.RIGHT, fill=tk.BOTH, expand=True)
+terminal_text = tk.Text(terminal_frame, bg = "black", fg = "white")
+terminal_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
 
 root.config(menu=menu)
